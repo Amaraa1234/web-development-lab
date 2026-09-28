@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
+</head>
+<body>
+
+    <header>
+        <h1>Оюутны Бүртгэлийн Портал</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Анкет засах</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+                <p>Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв зааж бөглөнө үү.</p>
+
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    
+                    <!-- 1-р бүлэг: Хувийн мэдээлэл -->
+                    <fieldset>
+                        <legend>Хувийн мэдээлэл</legend>
+
+                        <label for="fullname">Овог нэр:</label><br>
+                        <input type="text" id="fullname" name="fullname" placeholder="И. Болдбаатар" required minlength="2"><br><br>
+
+                        <label for="email">Цахим хаяг (Email):</label><br>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+
+                        <label for="password">Нууц үг:</label><br>
+                        <input type="password" id="password" name="password" required minlength="6"><br><br>
+
+                        <label for="phone">Утасны дугаар:</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="88112233" required><br><br>
+
+                        <label for="dob">Төрсөн огноо:</label><br>
+                        <input type="date" id="dob" name="dob" required><br><br>
+
+                        <label>Хүйс:</label><br>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Эрэгтэй</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Эмэгтэй</label><br>
+                    </fieldset>
+
+                    <br>
+
+                    <!-- 2-р бүлэг: Боловсрол ба Сонирхол -->
+                    <fieldset>
+                        <legend>Боловсрол ба Сонирхол</legend>
+
+                        <label for="degree">Суралцаж буй түвшин:</label><br>
+                        <select id="degree" name="degree" required>
+                            <option value="">-- Сонгоно уу --</option>
+                            <option value="bachelor">Бакалавр</option>
+                            <option value="master">Магистр</option>
+                            <option value="doctor">Докторант</option>
+                        </select><br><br>
+
+                        <label>Сонирхож буй технологиуд:</label><br>
+                        <input type="checkbox" id="html" name="skills" value="HTML">
+                        <label for="html">HTML5 / CSS3</label><br>
+
+                        <input type="checkbox" id="js" name="skills" value="JavaScript">
+                        <label for="js">JavaScript</label><br>
+
+                        <input type="checkbox" id="php" name="skills" value="PHP">
+                        <label for="php">PHP &amp; MySQL</label><br><br>
+
+                        <label for="avatar">Профайл зураг оруулна уу:</label><br>
+                        <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+
+                        <label for="bio">Товч танилцуулга / Өөрийн тухай:</label><br>
+                        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Өөрийн танилцуулгыг энд бичнэ үү..."></textarea><br>
+                    </fieldset>
+
+                    <br>
+
+                    <!-- 3-р бүлэг: Өөрийн үнэлгээ -->
+                    <fieldset>
+                        <legend>Хувь хүний онцлог ба Өөрийн үнэлгээ</legend>
+
+                        <p><b>1. Та өөрийгөө хэр хариуцлагатай хүн гэж боддог вэ?</b></p>
+                        <input type="radio" id="resp1" name="responsibility" value="bad" required> <label for="resp1">Муу</label>
+                        <input type="radio" id="resp2" name="responsibility" value="medium"> <label for="resp2">Дунд</label>
+                        <input type="radio" id="resp3" name="responsibility" value="good"> <label for="resp3">Сайн</label>
+                        <input type="radio" id="resp4" name="responsibility" value="very_good"> <label for="resp4">Маш сайн</label><br>
+
+                        <p><b>2. Багаар ажиллах чадвар тань ямар түвшинд байгаа вэ?</b></p>
+                        <input type="radio" id="team1" name="teamwork" value="bad" required> <label for="team1">Муу</label>
+                        <input type="radio" id="team2" name="teamwork" value="medium"> <label for="team2">Дунд</label>
+                        <input type="radio" id="team3" name="teamwork" value="good"> <label for="team3">Сайн</label>
+                        <input type="radio" id="team4" name="teamwork" value="very_good"> <label for="team4">Маш сайн</label><br>
+
+                        <p><b>3. Стресс болон ачаалал даах чадвар:</b></p>
+                        <input type="radio" id="stress1" name="stress" value="bad" required> <label for="stress1">Муу</label>
+                        <input type="radio" id="stress2" name="stress" value="medium"> <label for="stress2">Дунд</label>
+                        <input type="radio" id="stress3" name="stress" value="good"> <label for="stress3">Сайн</label>
+                        <input type="radio" id="stress4" name="stress" value="very_good"> <label for="stress4">Маш сайн</label><br>
+
+                        <p><b>4. Цаг ашиглалт болон цаг баримтлал:</b></p>
+                        <input type="radio" id="time1" name="time_mgmt" value="bad" required> <label for="time1">Муу</label>
+                        <input type="radio" id="time2" name="time_mgmt" value="medium"> <label for="time2">Дунд</label>
+                        <input type="radio" id="time3" name="time_mgmt" value="good"> <label for="time3">Сайн</label>
+                        <input type="radio" id="time4" name="time_mgmt" value="very_good"> <label for="time4">Маш сайн</label><br>
+
+                        <p><b>5. Шинэ зүйлийг бие даан хурдан сурах чадвар:</b></p>
+                        <input type="radio" id="learn1" name="learning" value="bad" required> <label for="learn1">Муу</label>
+                        <input type="radio" id="learn2" name="learning" value="medium"> <label for="learn2">Дунд</label>
+                        <input type="radio" id="learn3" name="learning" value="good"> <label for="learn3">Сайн</label>
+                        <input type="radio" id="learn4" name="learning" value="very_good"> <label for="learn4">Маш сайн</label><br>
+
+                        <p><b>6. Бусадтай харилцах болон өөрийгөө ойлгуулах чадвар:</b></p>
+                        <input type="radio" id="comm1" name="communication" value="bad" required> <label for="comm1">Муу</label>
+                        <input type="radio" id="comm2" name="communication" value="medium"> <label for="comm2">Дунд</label>
+                        <input type="radio" id="comm3" name="communication" value="good"> <label for="comm3">Сайн</label>
+                        <input type="radio" id="comm4" name="communication" value="very_good"> <label for="comm4">Маш сайн</label><br>
+
+                        <p><b>7. Асуудал шийдвэрлэх болон логик сэтгэлгээ:</b></p>
+                        <input type="radio" id="prob1" name="problem_solving" value="bad" required> <label for="prob1">Муу</label>
+                        <input type="radio" id="prob2" name="problem_solving" value="medium"> <label for="prob2">Дунд</label>
+                        <input type="radio" id="prob3" name="problem_solving" value="good"> <label for="prob3">Сайн</label>
+                        <input type="radio" id="prob4" name="problem_solving" value="very_good"> <label for="prob4">Маш сайн</label><br>
+
+                        <p><b>8. Та өөрийн зан чанараа ямар төрөлд хамаарна гэж боддог вэ?</b></p>
+                        <input type="radio" id="type1" name="personality_type" value="introvert" required>
+                        <label for="type1">Дотогшоо (Introvert)</label><br>
+                        <input type="radio" id="type2" name="personality_type" value="extrovert">
+                        <label for="type2">Гадагшаа (Extrovert)</label><br>
+                        <input type="radio" id="type3" name="personality_type" value="ambivert">
+                        <label for="type3">Хосолмол (Ambivert)</label><br>
+
+                        <p><b>9. Чөлөөт цагаараа ихэвчлэн юу хийдэг вэ? (Олон сонголт хийж болно):</b></p>
+                        <input type="checkbox" id="free1" name="leisure" value="reading"> <label for="free1">Ном унших</label><br>
+                        <input type="checkbox" id="free2" name="leisure" value="sports"> <label for="free2">Спортоор хичээллэх</label><br>
+                        <input type="checkbox" id="free3" name="leisure" value="gaming"> <label for="free3">Тоглоом тоглох</label><br>
+                        <input type="checkbox" id="free4" name="leisure" value="coding"> <label for="free4">Код бичих / Төсөл хийх</label><br>
+
+                        <p><b>10. Таны ажлын орчны баримталдаг гол зарчим юу вэ? (Олон сонголт хийж болно):</b></p>
+                        <input type="checkbox" id="work1" name="work_principle" value="honesty"> <label for="work1">Шударга, нээлттэй байдал</label><br>
+                        <input type="checkbox" id="work2" name="work_principle" value="punctuality"> <label for="work2">Цаг баримтлал</label><br>
+                        <input type="checkbox" id="work3" name="work_principle" value="creativity"> <label for="work3">Шинэчлэл, бүтээлч байдал</label><br>
+                        <input type="checkbox" id="work4" name="work_principle" value="discipline"> <label for="work4">Эмх цэгц, сахилга бат</label><br>
+
+                    </fieldset>
+
+                    <br>
+                    <button type="submit">Анкет Илгээх</button>
+                    <button type="reset">Дахин эхлүүлэх</button>
+                </form>
+            </section>
+        </article>
+
+        <section>
+            <h2>Миний сонирхол</h2>
+            <ul>
+                <li>Веб хөгжүүлэлт</li>
+                <li>Фото зураг авах</li>
+                <li>Кино үзэх</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Миний дүн</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Хичээл</th>
+                        <th>Дүн</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Веб зохиомж</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>Мэдээллийн сан</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>Алгоритм</td>
+                        <td>95</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Амжилт</p>
+    </footer>
+
+</body>
+</html>
