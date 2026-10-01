@@ -1,0 +1,240 @@
+/* =========================================================
+   Лаборатори 03: Хөх, Цэнхэр өнгөний Classic загвар
+   ========================================================= */
+
+/* 1. Google Fonts болон Ерөнхий Тохиргоо (Лаб 3, Заалт 5) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Зөөлөн цэнхэр туяатай саарал дэвсгэр */
+    color: #1e293b;
+    line-height: 1.6;
+    padding: 30px 15px;
+}
+
+/* Гарчгуудад Classic Serif фонт ашиглах */
+h1, h2, legend {
+    font-family: 'Merriweather', serif;
+    color: #0f172a; /* Гүн хөх */
+}
+
+/* 2. Header & Navigation загварчлах */
+header {
+    background-color: #1e3a8a; /* Классик гүн хөх өнгө */
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    color: #bfdbfe;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* 3. Үндсэн Контент болон Форм (Box Model & Padding, Margin - Заалт 3) */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    border-bottom: 2px solid #2563eb; /* Цэнхэр зураас */
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Fieldset ба Legend загварчлах */
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1d4ed8;
+    padding: 0 10px;
+}
+
+/* 4. Input, Select, Textarea загварчилгаа (Class & Element Сонгогч - Заалт 2) */
+label {
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #0f172a;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Талбар дээр фокуслах үеийн эффектийг цэнхэр өнгөөр хийх */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Radio & Checkbox тохиргоо */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #2563eb; /* Цэнхэр өнгөтэй сонгогч */
+    cursor: pointer;
+}
+
+/* 5. Position: Relative / Absolute жишээ (Badge / Tooltip - Заалт 4) */
+.relative-box {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 32px;
+    right: 12px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* 6. Товчлуурын загварчлал (Buttons) */
+button[type="submit"],
+button[type="reset"] {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #1d4ed8; /* Бараан цэнхэр */
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e40af;
+}
+
+button[type="reset"] {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+button[type="reset"]:hover {
+    background-color: #cbd5e1;
+    color: #0f172a;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* 7. Хүснэгтийн загварчлал (Table Styling) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #cbd5e1;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Жагсаалтын загвар */
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+ul li {
+    margin-bottom: 6px;
+}
+
+/* 8. Footer загварчлах */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
