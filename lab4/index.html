@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оюутны Клубын Арга Хэмжээ & QR Бүртгэлийн Систем</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-grid">
+
+  <!-- 1. HEADER & NAV SECTION (Flexbox) -->
+  <header class="site-header">
+    <div class="brand-logo">
+      <span class="logo-icon">🎟️</span>
+      <h1>CampusEvents</h1>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-menu">
+        <li><a href="#events" class="active">Арга хэмжээ</a></li>
+        <li><a href="#registration">QR Бүртгэл</a></li>
+        <li><a href="#dashboard">Ирцийн хяналт</a></li>
+        <li><a href="#about">Бидний тухай</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 2. MAIN CONTENT AREA (CSS Grid & Flexbox) -->
+  <main class="main-content">
+    
+    <!-- Header Banner / Intro -->
+    <section class="hero-section">
+      <h2>Оюутны Клубуудын Нэгдсэн Цахим Систем</h2>
+      <p>Facebook, Google Form болон цаасан ирцийг халж, нэгдсэн QR тасалбараар ирцээ шууд хянаарай.</p>
+    </section>
+
+    <!-- Events Grid Section (CSS Grid 3+ Columns) -->
+    <section id="events" class="events-section">
+      <div class="section-header">
+        <h3>Болох арга хэмжээнүүд</h3>
+        <span class="count-badge">3 Шинэ арга хэмжээ</span>
+      </div>
+
+      <div class="card-grid">
+        <!-- Event Card 1 -->
+        <article class="card event-card">
+          <header class="card-header">
+            <span class="club-tag tag-tech">Sysco&Tech</span>
+            <span class="event-date">10 сарын 15</span>
+          </header>
+          <div class="card-body">
+            <h4>Hackathon 2026</h4>
+            <p class="event-location">📍 Мэдээлэл Технологийн Төв</p>
+            <p class="event-desc">24 цагийн код бичих багийн тэмцээн. Програмчлалын ур чадвараа сорьж, шагнал аваарай.</p>
+          </div>
+          <footer class="card-footer">
+            <button class="btn btn-primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+
+        <!-- Event Card 2 -->
+        <article class="card event-card">
+          <header class="card-header">
+            <span class="club-tag tag-art">Art & Music</span>
+            <span class="event-date">10 сарын 20</span>
+          </header>
+          <div class="card-body">
+            <h4>Акустик Намар</h4>
+            <p class="event-location">📍 Оюутны Арга Хэмжээний Заал</p>
+            <p class="event-desc">Оюутны хамтлагуудын амьд хөгжмийн тоглолт, урлагийн чөлөөт үдэш.</p>
+          </div>
+          <footer class="card-footer">
+            <button class="btn btn-primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+
+        <!-- Event Card 3 -->
+        <article class="card event-card">
+          <header class="card-header">
+            <span class="club-tag tag-academic">IELTS Club</span>
+            <span class="event-date">10 сарын 25</span>
+          </header>
+          <div class="card-body">
+            <h4>IELTS Masterclass 8.0</h4>
+            <p class="event-location">📍 Эрдмийн Зөвлөлийн Өрөө</p>
+            <p class="event-desc">Академик үгсийн сан (AWL) болон Listening/Reading дээр 8.0 оноо авах практик туршлага.</p>
+          </div>
+          <footer class="card-footer">
+            <button class="btn btn-primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- Registration & QR Code Generator Grid Section -->
+    <section id="registration" class="registration-section">
+      <h3>Шууд бүртгүүлж, QR Тасалбар авах</h3>
+      
+      <div class="registration-grid">
+        <!-- Form Card -->
+        <div class="card form-card">
+          <h4>Бүртгэлийн форм</h4>
+          <form class="register-form" onsubmit="return false;">
+            <div class="form-control">
+              <label for="fullname">Овог Нэр:</label>
+              <input type="text" id="fullname" placeholder="Нэрээ оруулна уу" required>
+            </div>
+            <div class="form-control">
+              <label for="studentid">Оюутны код / Код:</label>
+              <input type="text" id="studentid" placeholder="B220910001" required>
+            </div>
+            <div class="form-control">
+              <label for="event">Арга хэмжээ:</label>
+              <select id="event">
+                <option>Hackathon 2026</option>
+                <option>Акустик Намар</option>
+                <option>IELTS Masterclass 8.0</option>
+              </select>
+            </div>
+            <button class="btn btn-success" type="submit">QR Тасалбар Үүсгэх</button>
+          </form>
+        </div>
+
+        <!-- Ticket Card -->
+        <div class="card ticket-card">
+          <h4>Таны QR Тасалбар</h4>
+          <div class="qr-wrapper">
+            <figure>
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=Student-Pass-Verified" alt="QR Ticket">
+              <figcaption>Төлөв: <strong>Идэвхтэй</strong></figcaption>
+            </figure>
+          </div>
+          <p class="qr-info">Арга хэмжээний үүдэнд зохион байгуулагчид энэхүү QR-ийг уншуулж ирцийг бүртгэнэ.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 3. SIDEBAR SECTION (Flexbox) -->
+  <aside class="site-sidebar">
+    <div class="sidebar-block widget-stats">
+      <h4>📊 Ирцийн Статистик</h4>
+      <p class="widget-desc">Цаасан жагсаалтаас татгалзаж, давхар бүртгэлийг шийдвэрлэсэн байдал:</p>
+      <ul class="stat-items">
+        <li class="stat-item">
+          <span>Нийт бүртгэл:</span>
+          <strong>450+</strong>
+        </li>
+        <li class="stat-item">
+          <span>QR Бодит ирц:</span>
+          <strong>412</strong>
+        </li>
+        <li class="stat-item">
+          <span>Ирцийн хувь:</span>
+          <span class="highlight">91.5%</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block widget-clubs">
+      <h4>🏛️ Идэвхтэй Клубууд</h4>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#">Sysco&Tech Club</a></li>
+          <li><a href="#">Art & Music Club</a></li>
+          <li><a href="#">IELTS & AWL Study Club</a></li>
+          <li><a href="#">Volleyball & Sports</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- 4. FOOTER SECTION (Flexbox) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Оюутны Клубын Нэгдсэн Систем. CSS Flexbox & Grid Лаборатори 4.</p>
+      <ul class="footer-links">
+        <li><a href="#">Нууцлал</a></li>
+        <li><a href="#">Үйлчилгээний нөхцөл</a></li>
+        <li><a href="#">Холбоо барих</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+/* ==========================================
+   1. BASE RESET & CSS VARIABLES
+   ========================================== */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #059669;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   2. PAGE GRID LAYOUT (CSS GRID)
+   Багшийн даалгаврын лайаутын үндсэн бүтэц
+   ========================================== */
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main   sidebar"
+    "footer footer";
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   3. HEADER & NAVIGATION (FLEXBOX)
+   ========================================== */
+.site-header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between; /* justify-content */
+  align-items: center;            /* align-items */
+  background: #1e1b4b;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;                   /* gap */
+}
+
+.brand-logo h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;                    /* gap */
+}
+
+.nav-menu a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #38bdf8;
+}
+
+/* ==========================================
+   4. MAIN CONTENT AREA
+   ========================================== */
+.main-content {
+  grid-area: main;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #312e81, #4338ca);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.hero-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.count-badge {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   5. CARD GRID SYSTEM (CSS GRID 3+ Columns)
+   ========================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3+ баганатай Grid */
+  gap: 1.5rem;                                                 /* gap шинж чанар */
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* justify-content */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.club-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.tag-tech { background: #dbeafe; color: #1e40af; }
+.tag-art { background: #fce7f3; color: #9d174d; }
+.tag-academic { background: #dcfce7; color: #166534; }
+
+.event-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-body h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-location {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.event-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Registration Grid (2 Columns) */
+.registration-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.form-control label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-control input,
+.form-control select {
+  padding: 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+}
+
+.ticket-card {
+  text-align: center;
+  align-items: center;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.qr-wrapper figure {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qr-wrapper img {
+  border: 2px dashed #22c55e;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.qr-info {
+  font-size: 0.8rem;
+  color: #15803d;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-success {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* ==========================================
+   6. SIDEBAR (FLEXBOX)
+   ========================================== */
+.site-sidebar {
+  grid-area: sidebar;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-block h4 {
+  font-size: 1.05rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.widget-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stat-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.highlight {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sidebar-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   7. FOOTER (FLEXBOX)
+   ========================================== */
+.site-footer {
+  grid-area: footer;
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 1.5rem 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* justify-content */
+  align-items: center;            /* align-items */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;                   /* gap */
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (MOBILE ADAPTIVE)
+   ========================================== */
+@media (max-width: 900px) {
+  .page-grid {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .site-header,
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+}
