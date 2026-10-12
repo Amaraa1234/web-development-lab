@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusEvents - Оюутны клубын арга хэмжээ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="container bar">
+  <a class="brand" href="index.html"><span class="brand-mark">🎟️</span>CampusEvents</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Цэс нээх" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+  <nav class="main-nav" id="mainNav"><ul class="nav-menu">
+    <li><a href="#events" class="active">Арга хэмжээ</a></li>
+    <li><a href="#registration">QR бүртгэл</a></li>
+    <li><a href="#clubs">Клубууд</a></li>
+    <li><a href="dashboard.html">Хяналтын самбар</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+  <section class="hero"><div class="container hero-grid">
+    <div>
+      <h2>Клубийн арга хэмжээ, нэг QR-аар.</h2>
+      <p>Facebook, Google Form, цаасан ирцийг орхиж, бүртгэл болон ирцээ нэг дороос хянаарай.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#registration">QR тасалбар авах</a>
+        <a class="btn btn-ghost" href="dashboard.html">Ирцийн самбар</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>450+</strong><span>Бүртгэл</span></div>
+        <div><strong>91.5%</strong><span>Ирцийн хувь</span></div>
+        <div><strong>4</strong><span>Идэвхтэй клуб</span></div>
+      </div>
+    </div>
+    <aside class="next-card" aria-label="Дараагийн арга хэмжээ">
+      <small>Дараагийн арга хэмжээ · 10 сарын 15</small>
+      <h3>Hackathon 2026</h3>
+      <ul class="next-meta"><li>📍 Мэдээлэл Технологийн Төв</li><li>⏱ 24 цагийн тэмцээн</li></ul>
+      <div class="meter" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"><i style="--w:72%"></i></div>
+      <div class="meter-label"><span>72 / 100 суудал дүүрсэн</span><span>28 үлдсэн</span></div>
+      <a class="btn btn-primary btn-block" href="#registration">Бүртгүүлэх</a>
+    </aside>
+  </div></section>
+
+  <section id="events" class="section"><div class="container">
+    <div class="section-head">
+      <div><h3>Болох арга хэмжээнүүд</h3><p>Клубээрээ шүүж, өөрт тохирохыг сонгоорой.</p></div>
+      <div class="chips" role="group" aria-label="Клубээр шүүх">
+        <button class="chip on" data-filter="all">Бүгд</button>
+        <button class="chip" data-filter="tech">Tech</button>
+        <button class="chip" data-filter="art">Art</button>
+        <button class="chip" data-filter="academic">IELTS</button>
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card event" data-club="tech">
+        <div class="event-top">
+          <div class="date-chip"><b>15</b><span>10-р сар</span></div>
+          <div><span class="tag tag-tech">Sysco&amp;Tech</span><h4>Hackathon 2026</h4></div>
+        </div>
+        <p class="loc">📍 Мэдээлэл Технологийн Төв</p>
+        <p class="desc">24 цагийн код бичих багийн тэмцээн. Програмчлалын ур чадвараа сорьж, шагнал аваарай.</p>
+        <div><div class="meter-label"><span>72 / 100</span><span>72%</span></div><div class="meter"><i style="--w:72%"></i></div></div>
+        <a class="btn btn-primary btn-block" href="#registration">Бүртгүүлэх</a>
+      </article>
+      <article class="card event" data-club="art">
+        <div class="event-top">
+          <div class="date-chip"><b>20</b><span>10-р сар</span></div>
+          <div><span class="tag tag-art">Art &amp; Music</span><h4>Акустик Намар</h4></div>
+        </div>
+        <p class="loc">📍 Оюутны Арга Хэмжээний Заал</p>
+        <p class="desc">Оюутны хамтлагуудын амьд хөгжмийн тоглолт, урлагийн чөлөөт үдэш.</p>
+        <div><div class="meter-label"><span>138 / 200</span><span>69%</span></div><div class="meter"><i style="--w:69%"></i></div></div>
+        <a class="btn btn-primary btn-block" href="#registration">Бүртгүүлэх</a>
+      </article>
+      <article class="card event" data-club="academic">
+        <div class="event-top">
+          <div class="date-chip"><b>25</b><span>10-р сар</span></div>
+          <div><span class="tag tag-academic">IELTS Club</span><h4>IELTS Masterclass 8.0</h4></div>
+        </div>
+        <p class="loc">📍 Эрдмийн Зөвлөлийн Өрөө</p>
+        <p class="desc">Академик үгсийн сан (AWL) болон Listening/Reading дээр 8.0 оноо авах практик туршлага.</p>
+        <div><div class="meter-label"><span>34 / 40</span><span>85%</span></div><div class="meter"><i style="--w:85%"></i></div></div>
+        <a class="btn btn-primary btn-block" href="#registration">Бүртгүүлэх</a>
+      </article>
+    </div>
+  </div></section>
+
+  <section id="registration" class="section"><div class="container">
+    <div class="section-head"><div><h3>Бүртгүүлж, QR тасалбар аваарай</h3><p>Тасалбараа утсандаа хадгалаад үүдэнд уншуулна.</p></div></div>
+    <div class="reg-grid">
+      <div class="card">
+        <form id="regForm">
+          <div class="form-control"><label for="fullname">Овог нэр</label><input type="text" id="fullname" name="fullname" placeholder="Нэрээ оруулна уу" required></div>
+          <div class="form-control"><label for="studentid">Оюутны код</label><input type="text" id="studentid" name="studentid" placeholder="B220910001" required></div>
+          <div class="form-control"><label for="event">Арга хэмжээ</label>
+            <select id="event" name="event"><option>Hackathon 2026</option><option>Акустик Намар</option><option>IELTS Masterclass 8.0</option></select></div>
+          <button class="btn btn-primary btn-block" type="submit">QR тасалбар үүсгэх</button>
+        </form>
+      </div>
+      <div class="card pass" id="pass">
+        <span class="status">Идэвхтэй</span>
+        <img id="passQr" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=Student-Pass-Verified" alt="QR тасалбар" width="160" height="160">
+        <div class="who" id="passName">Таны нэр</div>
+        <div class="ev" id="passEvent">Hackathon 2026</div>
+        <small id="passId">Оюутны код</small>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="clubs" class="section"><div class="container">
+    <div class="section-head"><div><h3>Идэвхтэй клубууд</h3></div></div>
+    <div class="clubs">
+      <div class="card club"><div class="ico">💻</div><div><b>Sysco&amp;Tech</b><span>120 гишүүн</span></div></div>
+      <div class="card club"><div class="ico">🎸</div><div><b>Art &amp; Music</b><span>96 гишүүн</span></div></div>
+      <div class="card club"><div class="ico">📚</div><div><b>IELTS &amp; AWL</b><span>84 гишүүн</span></div></div>
+      <div class="card club"><div class="ico">🏐</div><div><b>Volleyball &amp; Sports</b><span>150 гишүүн</span></div></div>
+    </div>
+  </div></section>
+</main>
+
+<footer class="site-footer"><div class="container foot">
+  <p>&copy; 2026 CampusEvents · Responsive Лаборатори 5</p>
+  <ul><li><a href="#">Нууцлал</a></li><li><a href="#">Үйлчилгээний нөхцөл</a></li><li><a href="#">Холбоо барих</a></li></ul>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

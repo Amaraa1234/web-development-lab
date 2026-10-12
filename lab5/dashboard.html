@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хяналтын самбар - CampusEvents</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="container bar">
+  <a class="brand" href="index.html"><span class="brand-mark">🎟️</span>CampusEvents</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Цэс нээх" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+  <nav class="main-nav" id="mainNav"><ul class="nav-menu">
+    <li><a href="index.html#events">Арга хэмжээ</a></li>
+    <li><a href="index.html#registration">QR бүртгэл</a></li>
+    <li><a href="index.html#clubs">Клубууд</a></li>
+    <li><a href="dashboard.html" class="active">Хяналтын самбар</a></li>
+  </ul></nav>
+</div></header>
+
+<main class="container">
+  <div class="page-title"><h2>Ирцийн хяналтын самбар</h2><p>Сүүлийн 7 хоногийн бүртгэл болон QR ирцийн мэдээлэл.</p></div>
+
+  <section class="kpis" aria-label="Гол үзүүлэлтүүд" style="margin-top:1rem">
+    <div class="card kpi"><small>Нийт бүртгэл</small><strong>450+</strong><span class="up">▲ 12% өмнөх долоо хоногоос</span></div>
+    <div class="card kpi"><small>QR бодит ирц</small><strong>412</strong><span class="up">▲ 8%</span></div>
+    <div class="card kpi"><small>Ирцийн хувь</small><strong>91.5%</strong><span class="up">▲ 2.1 пункт</span></div>
+    <div class="card kpi"><small>Ирээгүй</small><strong>38</strong><span class="down">▼ 5%</span></div>
+  </section>
+
+  <div class="dash-grid">
+    <section class="card">
+      <h4>Өдөр тутмын бүртгэл</h4>
+      <div class="chart" role="img" aria-label="Даваа 40, Мягмар 62, Лхагва 55, Пүрэв 88, Баасан 100, Бямба 48, Ням 30 бүртгэл">
+        <div class="bar-col"><i style="--h:40%"></i><em>Да</em></div>
+        <div class="bar-col"><i style="--h:62%"></i><em>Мя</em></div>
+        <div class="bar-col"><i style="--h:55%"></i><em>Лх</em></div>
+        <div class="bar-col"><i style="--h:88%"></i><em>Пү</em></div>
+        <div class="bar-col top"><i style="--h:100%"></i><em>Ба</em></div>
+        <div class="bar-col"><i style="--h:48%"></i><em>Бя</em></div>
+        <div class="bar-col"><i style="--h:30%"></i><em>Ня</em></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h4>Клубээр хуваарилалт</h4>
+      <div class="donut-wrap">
+        <div class="donut" role="img" aria-label="Sysco&Tech 42%, Art & Music 26%, IELTS 32%"></div>
+        <ul class="legend">
+          <li><i style="background:var(--blue)"></i>Sysco&amp;Tech 42%</li>
+          <li><i style="background:var(--rose)"></i>Art &amp; Music 26%</li>
+          <li><i style="background:var(--mint)"></i>IELTS Club 32%</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card wide">
+      <h4>Арга хэмжээний ирц</h4>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Арга хэмжээ</th><th>Клуб</th><th>Огноо</th><th>Бүртгэл</th><th>Дүүргэлт</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Арга хэмжээ">Hackathon 2026</td><td data-label="Клуб"><span class="tag tag-tech">Sysco&amp;Tech</span></td><td data-label="Огноо">10/15</td><td data-label="Бүртгэл">72 / 100</td><td data-label="Дүүргэлт"><div class="meter"><i style="--w:72%"></i></div></td></tr>
+          <tr><td data-label="Арга хэмжээ">Акустик Намар</td><td data-label="Клуб"><span class="tag tag-art">Art &amp; Music</span></td><td data-label="Огноо">10/20</td><td data-label="Бүртгэл">138 / 200</td><td data-label="Дүүргэлт"><div class="meter"><i style="--w:69%"></i></div></td></tr>
+          <tr><td data-label="Арга хэмжээ">IELTS Masterclass 8.0</td><td data-label="Клуб"><span class="tag tag-academic">IELTS</span></td><td data-label="Огноо">10/25</td><td data-label="Бүртгэл">34 / 40</td><td data-label="Дүүргэлт"><div class="meter"><i style="--w:85%"></i></div></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card wide">
+      <h4>Сүүлд ирцээ бүртгүүлсэн</h4>
+      <ul class="feed">
+        <li><div class="avatar">БН</div><div><b>Бат-Эрдэнэ Н.</b><span>Hackathon 2026 · 2 минутын өмнө</span></div></li>
+        <li><div class="avatar">СА</div><div><b>Сарнай А.</b><span>Акустик Намар · 9 минутын өмнө</span></div></li>
+        <li><div class="avatar">ТО</div><div><b>Тэмүүлэн О.</b><span>IELTS Masterclass · 21 минутын өмнө</span></div></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container foot">
+  <p>&copy; 2026 CampusEvents · Responsive Лаборатори 5</p>
+  <ul><li><a href="#">Нууцлал</a></li><li><a href="#">Үйлчилгээний нөхцөл</a></li><li><a href="#">Холбоо барих</a></li></ul>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
