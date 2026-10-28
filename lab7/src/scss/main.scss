@@ -1,0 +1,26 @@
+// ==========================================
+// main.scss — бүх partial-ийг нэгтгэх цорын ганц оролт
+// ==========================================
+
+// 1. Base
+@use 'base/root';
+@use 'base/reset';
+@use 'base/animations';
+
+// 2. Layout
+@use 'layout/page';
+@use 'layout/header';
+@use 'layout/sidebar';
+@use 'layout/footer';
+
+// 3. Components
+@use 'components/nav';
+@use 'components/button';
+@use 'components/card';
+@use 'components/section';
+@use 'components/flip-card';
+@use 'components/form';
+@use 'components/media';
+
+// 4. Utilities (хамгийн сүүлд — бусдыг дарж чадна)
+@use 'utilities/utilities';

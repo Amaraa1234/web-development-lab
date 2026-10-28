@@ -1,0 +1,57 @@
+// ==========================================
+// _mixins.scss — respond, flex-center, auto-fit-grid, card-surface
+// ==========================================
+@use 'sass:map';
+@use 'tokens';
+@use 'functions' as fn;
+
+// @include respond(md) { … }        → @media (max-width: 900px)   (desktop-first)
+// @include respond(md, up) { … }    → @media (min-width: 901px)
+@mixin respond($name, $direction: down) {
+  $bp: map.get(tokens.$breakpoints, $name);
+  @if not $bp {
+    @error 'Unknown breakpoint `#{$name}`. Available: #{map.keys(tokens.$breakpoints)}';
+  }
+  @if $direction == down {
+    @media (max-width: $bp) {
+      @content;
+    }
+  } @else if $direction == up {
+    @media (min-width: $bp + 1px) {
+      @content;
+    }
+  } @else {
+    @error 'respond(): direction must be `down` or `up`, got `#{$direction}`';
+  }
+}
+
+// flex контейнер + align-items: center (justify-ийг сольж болно)
+@mixin flex-center($gap: null, $direction: row, $justify: center) {
+  display: flex;
+  @if $direction != row {
+    flex-direction: $direction;
+  }
+  align-items: center;
+  justify-content: $justify;
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// repeat(auto-fit, minmax()) grid
+@mixin auto-fit-grid($min: 250px, $gap: fn.rem(24)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
+}
+
+// .card болон flip-card-ийн нүүр хоёрын нийтлэг гадаргуу
+@mixin card-surface {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: fn.rem(20);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}

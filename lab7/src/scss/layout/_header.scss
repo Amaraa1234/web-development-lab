@@ -1,0 +1,50 @@
+// ==========================================
+// layout/_header.scss — .site-header, .theme-toggle
+// ==========================================
+@use '../abstracts' as *;
+
+.site-header {
+  @include flex-center($justify: space-between);
+  grid-area: header;
+  background: var(--header-bg);
+  color: on('header-bg');
+  padding: rem(16) rem(32);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  @include respond(md) {
+    flex-direction: column;
+    gap: rem(16);
+    align-items: flex-start;
+  }
+
+  &__logo {
+    @include flex-center(rem(12), $justify: flex-start);
+  }
+
+  &__title {
+    font-size: rem(21.6);
+    font-weight: 700;
+  }
+
+  &__controls {
+    @include flex-center(rem(16), $justify: flex-start);
+  }
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: rem(6.4) rem(12.8);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: rem(13.6);
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

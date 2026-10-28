@@ -1,0 +1,33 @@
+// ==========================================
+// base/_root.scss — token map-уудаас :root custom property үүсгэнэ
+// ==========================================
+@use '../abstracts' as *;
+
+@mixin theme-colors($palette) {
+  @each $name, $value in $palette {
+    --#{$name}: #{$value};
+  }
+}
+
+:root {
+  @include theme-colors($colors);
+
+  --font-family: #{$font-family};
+
+  @each $name, $value in $radii {
+    --radius-#{$name}: #{$value};
+  }
+  @each $name, $value in $breakpoints {
+    --bp-#{$name}: #{$value};
+  }
+  @each $name, $px in $spacing {
+    --space-#{$name}: #{rem($px)};
+  }
+  @each $name, $px in $font-sizes {
+    --text-#{$name}: #{rem($px)};
+  }
+}
+
+:root[data-theme='dark'] {
+  @include theme-colors($colors-dark);
+}

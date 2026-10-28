@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusEvents - Лаб 7 Портал</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-grid">
+
+  <!-- HEADER & NAV -->
+  <header class="site-header">
+    <div class="site-header__logo">
+      <span class="site-header__icon">🎟️</span>
+      <h1 class="site-header__title">CampusEvents</h1>
+    </div>
+    <div class="site-header__controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Цагаан/Хар горим шилжүүлэх">🌓 Өнгө</button>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#events" class="nav__link nav__link--active">Арга хэмжээ</a></li>
+        <li class="nav__item"><a href="#gallery" class="nav__link">Зургийн цомог</a></li>
+        <li class="nav__item"><a href="#registration" class="nav__link">QR Бүртгэл</a></li>
+        <li class="nav__item"><a href="#multimedia" class="nav__link">Мультмедиа</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <section class="hero">
+      <h2 class="hero__title">Animation, Transform & Multimedia</h2>
+      <p class="hero__text">CSS3 хөдөлгөөн, 3D эффект, custom properties болон видео контент бүхий өргөтгөсөн систем.</p>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="section">
+      <div class="section__header">
+        <h3 class="section__title">Болох арга хэмжээнүүд</h3>
+        <span class="badge">3 Шинэ арга хэмжээ</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="card card--event u-stagger" style="--i: 1">
+          <header class="card__header">
+            <span class="tag tag--tech">Sysco&amp;Tech</span>
+            <span class="card__date">10 сарын 15</span>
+          </header>
+          <div class="card__body">
+            <h4 class="card__title">Hackathon 2026</h4>
+            <p class="card__location">📍 Мэдээлэл Технологийн Төв</p>
+            <p class="card__desc">24 цагийн код бичих багийн тэмцээн.</p>
+          </div>
+          <footer class="card__footer">
+            <button class="btn btn--primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+
+        <article class="card card--event u-stagger" style="--i: 2">
+          <header class="card__header">
+            <span class="tag tag--art">Art &amp; Music</span>
+            <span class="card__date">10 сарын 20</span>
+          </header>
+          <div class="card__body">
+            <h4 class="card__title">Акустик Намар</h4>
+            <p class="card__location">📍 Оюутны Заал</p>
+            <p class="card__desc">Оюутны хамтлагуудын амьд хөгжмийн тоглолт.</p>
+          </div>
+          <footer class="card__footer">
+            <button class="btn btn--primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+
+        <article class="card card--event u-stagger" style="--i: 3">
+          <header class="card__header">
+            <span class="tag tag--academic">IELTS Club</span>
+            <span class="card__date">10 сарын 25</span>
+          </header>
+          <div class="card__body">
+            <h4 class="card__title">IELTS Masterclass 8.0</h4>
+            <p class="card__location">📍 Эрдмийн Зөвлөлийн Өрөө</p>
+            <p class="card__desc">Listening/Reading дээр 8.0 оноо авах туршлага.</p>
+          </div>
+          <footer class="card__footer">
+            <button class="btn btn--primary">Бүртгүүлэх</button>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery & 3D Flip Cards: mouse хүрэхэд ар тал нь гарч, авахад урд тал руу буцна -->
+    <section id="gallery" class="section gallery">
+      <div class="section__header">
+        <h3 class="section__title">Зургийн цомог & 3D Flip Cards</h3>
+        <button class="btn btn--primary btn--compact" id="flipAllBtn">Бүгдийг эргүүлэх</button>
+      </div>
+
+      <div class="gallery__grid">
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card__inner">
+            <div class="flip-card__face flip-card__face--front">
+              <img class="flip-card__img" src="img/photo1.jpg" alt="Gallery Photo 1" onerror="this.src='https://picsum.photos/300/200?random=1'">
+              <p class="flip-card__caption">Зураг 1: Hackathon үйл ажиллагаа</p>
+            </div>
+            <div class="flip-card__face flip-card__face--back">
+              <h4 class="flip-card__title">Дэлгэрэнгүй мэдээлэл</h4>
+              <p class="flip-card__text">Энэхүү үйл ажиллагаа нь оюутнуудын дунд амжилттай зохион байгуулагдлаа.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card__inner">
+            <div class="flip-card__face flip-card__face--front">
+              <img class="flip-card__img" src="img/photo2.jpg" alt="Gallery Photo 2" onerror="this.src='https://picsum.photos/300/200?random=2'">
+              <p class="flip-card__caption">Зураг 2: Урлагийн үдэш</p>
+            </div>
+            <div class="flip-card__face flip-card__face--back">
+              <h4 class="flip-card__title">Дэлгэрэнгүй мэдээлэл</h4>
+              <p class="flip-card__text">Акустик хөгжмийн тоглолтын үеэрх дурсамжтай мөчүүд.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card__inner">
+            <div class="flip-card__face flip-card__face--front">
+              <img class="flip-card__img" src="img/photo3.jpg" alt="Gallery Photo 3" onerror="this.src='https://picsum.photos/300/200?random=3'">
+              <p class="flip-card__caption">Зураг 3: IELTS Seminar</p>
+            </div>
+            <div class="flip-card__face flip-card__face--back">
+              <h4 class="flip-card__title">Дэлгэрэнгүй мэдээлэл</h4>
+              <p class="flip-card__text">Академик үгсийн сан болон шалгалтын зөвлөгөө өгсөн семинар.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="registration" class="section registration">
+      <h3 class="section__title">Шууд бүртгүүлж, QR Тасалбар авах</h3>
+
+      <div class="registration__grid">
+        <div class="card card--form">
+          <h4 class="card__title">Бүртгэлийн форм</h4>
+          <form class="form" id="qrForm">
+            <div class="form__group">
+              <label class="form__label" for="fullname">Овог Нэр:</label>
+              <input class="form__control" type="text" id="fullname" placeholder="Нэрээ оруулна уу" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="studentid">Оюутны код:</label>
+              <input class="form__control" type="text" id="studentid" placeholder="B220910001" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="event">Арга хэмжээ:</label>
+              <select class="form__control" id="event">
+                <option>Hackathon 2026</option>
+                <option>Акустик Намар</option>
+                <option>IELTS Masterclass 8.0</option>
+              </select>
+            </div>
+            <button class="btn btn--success" type="submit">QR Тасалбар Үүсгэх</button>
+          </form>
+        </div>
+
+        <div class="card card--ticket ticket">
+          <h4 class="card__title">Таны QR Тасалбар</h4>
+          <div class="ticket__qr">
+            <figure class="ticket__figure">
+              <img class="ticket__qr-img" id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=Student-Pass-Verified" alt="QR Ticket">
+              <figcaption class="ticket__status">Төлөв: <strong>Идэвхтэй</strong></figcaption>
+            </figure>
+          </div>
+          <p class="ticket__info">Үүдэнд уншуулж ирцээ баталгаажуулна уу.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multimedia (Video, Track, Inline SVG) -->
+    <section id="multimedia" class="section card media">
+      <h3 class="section__title">🎥 Мультмедиа & Видео танилцуулга</h3>
+      <p class="media__desc">Клубийн үйл ажиллагааны видео бичлэг:</p>
+
+      <div class="media__video-wrap u-mt-md">
+        <video class="media__video" controls poster="img/photo1.jpg" width="100%">
+          <source src="video/clip.mp4" type="video/mp4">
+          <source src="video/clip.webm" type="video/webm">
+          <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол хадмал" default>
+          Таны хөтөч видео элемент дэмжихгүй байна.
+        </video>
+      </div>
+
+      <div class="media__icon u-mt-lg u-text-center">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <p class="u-text-sm u-text-muted">Inline SVG Icon</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__block">
+      <h4 class="sidebar__title">📊 Ирцийн Статистик</h4>
+      <ul class="stats__list">
+        <li class="stats__item"><span>Нийт бүртгэл:</span><strong>450+</strong></li>
+        <li class="stats__item"><span>QR Бодит ирц:</span><strong>412</strong></li>
+        <li class="stats__item"><span>Ирцийн хувь:</span><span class="stats__highlight">91.5%</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__block">
+      <h4 class="sidebar__title">🏛️ Идэвхтэй Клубууд</h4>
+      <nav class="sidebar__nav">
+        <ul class="sidebar__list">
+          <li><a class="sidebar__link" href="#">Sysco&amp;Tech Club</a></li>
+          <li><a class="sidebar__link" href="#">Art &amp; Music Club</a></li>
+          <li><a class="sidebar__link" href="#">IELTS Study Club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Лаборатори 7: Sass/SCSS Refactoring.</p>
+      <ul class="site-footer__links">
+        <li><a class="site-footer__link" href="#">Нууцлал</a></li>
+        <li><a class="site-footer__link" href="#">Холбоо барих</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

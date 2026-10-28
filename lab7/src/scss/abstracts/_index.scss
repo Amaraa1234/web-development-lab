@@ -1,0 +1,4 @@
+// Бүх abstract-ыг нэг дор нийлүүлнэ: @use '../abstracts' as *;
+@forward 'tokens';
+@forward 'functions';
+@forward 'mixins';

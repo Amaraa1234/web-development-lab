@@ -1,0 +1,28 @@
+// ==========================================
+// components/_section.scss — .hero, .section__header, .badge
+// ==========================================
+@use '../abstracts' as *;
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: on('primary-color');
+  padding: rem(32);
+  border-radius: var(--radius-xl);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.section {
+  &__header {
+    @include flex-center($justify: space-between);
+    margin-bottom: rem(16);
+  }
+}
+
+.badge {
+  background: var(--border-color);
+  color: var(--text-main);
+  padding: rem(4) rem(12);
+  border-radius: var(--radius-pill);
+  font-size: rem(13.6);
+  font-weight: 600;
+}

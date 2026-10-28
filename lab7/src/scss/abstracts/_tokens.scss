@@ -1,0 +1,70 @@
+// ==========================================
+// _tokens.scss — Лаб 6-ийн style.css-ийн бүх "design token"
+// Өнгө, радиус, breakpoint, зай, фонтын хэмжээг map хэлбэрээр хадгална.
+// base/_root.scss эдгээрийг :root-ийн CSS custom property болгон гаргана.
+// ==========================================
+@use 'sass:map';
+
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// ---------- Өнгө (цагаан горим) — түлхүүр = custom property-ийн нэр ----------
+$colors: (
+  'primary-color':   #4f46e5,
+  'primary-hover':   #4338ca,
+  'secondary-color': #059669,
+  'bg-color':        #f8fafc,
+  'card-bg':         #ffffff,
+  'text-main':       #0f172a,
+  'text-muted':      #64748b,
+  'border-color':    #e2e8f0,
+  'header-bg':       #1e1b4b,
+  'nav-link':        #cbd5e1,
+  'nav-link-active': #38bdf8,
+);
+
+// ---------- Өнгө (хар горим) — зөвхөн өөрчлөгдөх утгууд ----------
+$colors-dark: map.merge($colors, (
+  'primary-color':   #6366f1,
+  'primary-hover':   #818cf8,
+  'secondary-color': #10b981,
+  'bg-color':        #0f172a,
+  'card-bg':         #1e293b,
+  'text-main':       #f8fafc,
+  'text-muted':      #94a3b8,
+  'border-color':    #334155,
+  'header-bg':       #020617,
+));
+
+// ---------- Радиус ----------
+$radii: (
+  'sm':   6px,
+  'md':   8px,
+  'lg':   10px,
+  'xl':   12px,
+  'pill': 20px,
+);
+
+// ---------- Breakpoint ----------
+$breakpoints: (
+  'sm': 600px,
+  'md': 900px,
+  'lg': 1200px,
+);
+
+// ---------- Зай (px, rem() рүү хөрвөнө) ----------
+$spacing: (
+  'xs': 4,
+  'sm': 8,
+  'md': 16,
+  'lg': 24,
+  'xl': 32,
+);
+
+// ---------- Фонтын хэмжээ (px) ----------
+$font-sizes: (
+  'xs': 12.8,   // 0.8rem
+  'sm': 13.6,   // 0.85rem
+  'md': 14.4,   // 0.9rem
+  'lg': 16.8,   // 1.05rem
+  'xl': 21.6,   // 1.35rem
+);

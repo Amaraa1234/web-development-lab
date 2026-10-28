@@ -1,0 +1,32 @@
+// ==========================================
+// layout/_page.scss — body.page-grid ба .main
+// ==========================================
+@use '../abstracts' as *;
+
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'main   sidebar'
+    'footer footer';
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  @include respond(md) {
+    grid-template-areas:
+      'header'
+      'main'
+      'sidebar'
+      'footer';
+    grid-template-columns: 1fr;
+  }
+}
+
+.main {
+  grid-area: main;
+  padding: rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+}

@@ -1,0 +1,51 @@
+// ==========================================
+// utilities/_utilities.scss — @each-ээр үүсгэсэн utility классууд
+// ==========================================
+@use '../abstracts' as *;
+
+// 1. Margin: .u-mt-sm, .u-mb-lg …
+$_margin-props: (
+  'mt': margin-top,
+  'mb': margin-bottom,
+);
+
+@each $key, $property in $_margin-props {
+  @each $size, $px in $spacing {
+    .u-#{$key}-#{$size} {
+      #{$property}: rem($px);
+    }
+  }
+}
+
+// 2. Текстийн хэмжээ: .u-text-sm …
+@each $size, $px in $font-sizes {
+  .u-text-#{$size} {
+    font-size: rem($px);
+  }
+}
+
+// 3. Текстийн зэрэгцүүлэлт: .u-text-center …
+@each $align in (left, center, right) {
+  .u-text-#{$align} {
+    text-align: $align;
+  }
+}
+
+// 4. Текстийн өнгө: .u-text-muted …
+$_text-colors: (
+  'muted':     'text-muted',
+  'primary':   'primary-color',
+  'secondary': 'secondary-color',
+);
+
+@each $name, $token in $_text-colors {
+  .u-text-#{$name} {
+    color: var(--#{$token});
+  }
+}
+
+// 5. Stagger анимаци: --i тоогоор дарааллаар гарна
+.u-stagger {
+  animation: fadeInUp 0.6s ease-out backwards;
+  animation-delay: calc(var(--i) * 0.15s);
+}

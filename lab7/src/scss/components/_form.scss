@@ -1,0 +1,40 @@
+// ==========================================
+// components/_form.scss — .registration, .form
+// ==========================================
+@use '../abstracts' as *;
+
+.registration {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: rem(24);
+    margin-top: rem(16);
+
+    @include respond(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5.6);
+    margin-bottom: rem(16);
+  }
+
+  &__label {
+    font-size: rem(13.6);
+    font-weight: 600;
+  }
+
+  &__control {
+    padding: rem(10.4);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-main);
+    border-radius: var(--radius-sm);
+    outline: none;
+  }
+}

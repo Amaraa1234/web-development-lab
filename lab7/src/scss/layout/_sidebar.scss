@@ -1,0 +1,59 @@
+// ==========================================
+// layout/_sidebar.scss — .sidebar ба .stats
+// ==========================================
+@use '../abstracts' as *;
+
+.sidebar {
+  grid-area: sidebar;
+  padding: rem(32) rem(24);
+  background: var(--card-bg);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  &__title {
+    font-size: rem(16.8);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: rem(8);
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: rem(14.4);
+  }
+}
+
+.stats {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(14.4);
+  }
+
+  &__highlight {
+    color: var(--secondary-color);
+    font-weight: 700;
+  }
+}

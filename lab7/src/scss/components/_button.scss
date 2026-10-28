@@ -1,0 +1,39 @@
+// ==========================================
+// components/_button.scss — .btn + --primary / --success / --compact
+// ==========================================
+@use '../abstracts' as *;
+
+.btn {
+  width: 100%;
+  padding: rem(11.2);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--primary {
+    background: var(--primary-color);
+    color: on('primary-color');
+
+    &:hover {
+      background: var(--primary-hover);
+    }
+  }
+
+  // Лаб 6-д цагаан текст байсан тул contrast() биш, цагаанаар хэвээр үлдээв
+  &--success {
+    background: var(--secondary-color);
+    color: #ffffff;
+  }
+
+  // Өмнө нь inline style="width:auto; padding:0.4rem 1rem" байсан
+  &--compact {
+    width: auto;
+    padding: rem(6.4) rem(16);
+  }
+}
