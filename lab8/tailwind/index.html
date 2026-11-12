@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusEvents Фото цомог — Tailwind</title>
+  <script>
+    try {
+      const t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('dark');
+    } catch (e) {}
+  </script>
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+
+  <nav class="sticky top-0 z-10 border-b border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
+      <a href="#" class="text-lg font-bold">🎟️ CampusEvents</a>
+      <button id="menuBtn" type="button" class="rounded border border-slate-400 px-3 py-1 md:hidden" aria-controls="menu" aria-expanded="false" aria-label="Цэс нээх">☰</button>
+      <div id="menu" class="hidden w-full items-center gap-4 md:flex md:w-auto">
+        <ul class="flex flex-col gap-2 md:flex-row md:gap-4">
+          <li><a href="#gallery" class="font-medium text-brand">Зургийн цомог</a></li>
+          <li><a href="#upload" class="text-slate-600 hover:text-brand dark:text-slate-300">Зураг нэмэх</a></li>
+        </ul>
+        <button id="themeToggle" type="button" class="rounded border border-slate-400 px-3 py-1 text-sm hover:bg-slate-200 dark:hover:bg-slate-700">🌓 Өнгө</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-6xl px-4 py-6">
+    <header class="mb-6">
+      <h2 class="text-2xl font-semibold">Фото цомог</h2>
+      <p class="text-slate-500 dark:text-slate-400">Лаб 8: Tailwind CSS v4 хувилбар.</p>
+    </header>
+
+    <section id="gallery" class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <article class="flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
+        <img src="https://picsum.photos/400/250?random=1" alt="Hackathon" loading="lazy" class="h-48 w-full object-cover">
+        <div class="flex-1 p-4">
+          <h3 class="text-xl font-medium">Hackathon 2026</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Оюутнуудын 24 цагийн код бичих тэмцээн.</p>
+        </div>
+        <div class="border-t border-slate-200 p-4 dark:border-slate-700"><a href="#" class="inline-block rounded bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-dark">Дэлгэрэнгүй</a></div>
+      </article>
+      <article class="flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
+        <img src="https://picsum.photos/400/250?random=2" alt="Акустик Намар" loading="lazy" class="h-48 w-full object-cover">
+        <div class="flex-1 p-4">
+          <h3 class="text-xl font-medium">Акустик Намар</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Оюутны хамтлагуудын амьд тоглолт.</p>
+        </div>
+        <div class="border-t border-slate-200 p-4 dark:border-slate-700"><a href="#" class="inline-block rounded bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-dark">Дэлгэрэнгүй</a></div>
+      </article>
+      <article class="flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
+        <img src="https://picsum.photos/400/250?random=3" alt="IELTS" loading="lazy" class="h-48 w-full object-cover">
+        <div class="flex-1 p-4">
+          <h3 class="text-xl font-medium">IELTS Masterclass</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Listening/Reading дээр 8.0 авах туршлага.</p>
+        </div>
+        <div class="border-t border-slate-200 p-4 dark:border-slate-700"><a href="#" class="inline-block rounded bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-dark">Дэлгэрэнгүй</a></div>
+      </article>
+    </section>
+
+    <section id="upload" class="max-w-xl">
+      <h3 class="mb-4 text-lg font-semibold">Зураг нэмэх</h3>
+      <form id="uploadForm" class="space-y-4">
+        <div>
+          <label for="title" class="mb-1 block text-sm font-medium">Гарчиг</label>
+          <input type="text" id="title" required minlength="3" class="peer w-full rounded border border-slate-300 bg-white px-3 py-2 user-invalid:border-red-500 user-valid:border-green-500 dark:border-slate-600 dark:bg-slate-800">
+          <p class="mt-1 hidden text-sm text-red-500 peer-user-invalid:block">Дор хаяж 3 тэмдэгт оруулна уу.</p>
+        </div>
+        <div>
+          <label for="email" class="mb-1 block text-sm font-medium">И-мэйл</label>
+          <input type="email" id="email" required class="peer w-full rounded border border-slate-300 bg-white px-3 py-2 user-invalid:border-red-500 user-valid:border-green-500 dark:border-slate-600 dark:bg-slate-800">
+          <p class="mt-1 hidden text-sm text-red-500 peer-user-invalid:block">Зөв и-мэйл хаяг оруулна уу.</p>
+        </div>
+        <div>
+          <label for="album" class="mb-1 block text-sm font-medium">Цомог</label>
+          <select id="album" required class="peer w-full rounded border border-slate-300 bg-white px-3 py-2 user-invalid:border-red-500 user-valid:border-green-500 dark:border-slate-600 dark:bg-slate-800">
+            <option value="" selected disabled>Сонгоно уу...</option>
+            <option>Hackathon 2026</option>
+            <option>Акустик Намар</option>
+            <option>IELTS Masterclass</option>
+          </select>
+          <p class="mt-1 hidden text-sm text-red-500 peer-user-invalid:block">Цомог сонгоно уу.</p>
+        </div>
+        <div>
+          <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="agree" required class="peer size-4 accent-brand"> Зургийн эрхийг баталгаажуулж байна</label>
+          <p class="mt-1 hidden text-sm text-red-500 peer-user-invalid:block">Зөвшөөрөх шаардлагатай.</p>
+        </div>
+        <button type="submit" class="rounded bg-brand px-4 py-2 font-medium text-white hover:bg-brand-dark">Илгээх</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 py-4 text-center text-sm text-slate-500 dark:border-slate-700">&copy; 2026 Лаб 8 — Tailwind</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

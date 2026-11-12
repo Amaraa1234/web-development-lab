@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Dark mode: <html class="dark"> дээр суурилсан */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Брэнд өнгө — bg-brand, text-brand, hover:bg-brand-dark үүснэ */
+@theme {
+  --color-brand: #4f46e5;
+  --color-brand-dark: #4338ca;
+}
